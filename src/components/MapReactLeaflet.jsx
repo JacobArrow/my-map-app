@@ -51,7 +51,10 @@ export default function MapReactLeaflet() {
         maxZoom={19}
       />
 
-      <Marker position={COPENHAGEN_LAT_LNG}>
+      <Marker
+        position={COPENHAGEN_LAT_LNG}
+        eventHandlers={{ add: (e) => e.target.openPopup() }}
+      >
         <Popup>Hello from Copenhagen!</Popup>
       </Marker>
 
