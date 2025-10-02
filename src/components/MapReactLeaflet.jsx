@@ -47,7 +47,7 @@ export default function MapReactLeaflet() {
   return (
     <MapContainer center={DENMARK_LAT_LNG} zoom={DEFAULT_ZOOM} className="map">
       <TileLayer
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        url="https://tiles.stadiamaps.com/tiles/alidade_satellite/{z}/{x}/{y}{r}.png"
         maxZoom={19}
       />
 
