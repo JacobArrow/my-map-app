@@ -15,7 +15,7 @@ export default function App() {
         <FunWithMarkers />
       </MapReactLeaflet>
       <h1>Draggable marker</h1>
-      <p>Try dragging the pin to reveal the name of the nearest city</p>
+      <p>Try dragging the hand to reveal the name of the nearest city</p>
       <MapReactLeaflet>
         <DragableMarker />
       </MapReactLeaflet>

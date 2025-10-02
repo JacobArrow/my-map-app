@@ -42,20 +42,7 @@ export default function DragableMarker() {
   const markerRef = useRef(null);
 
   useEffect(() => {
-    (async () => {
-      try {
-        const name = await reverseGeocodeNearestCity(
-          AARHUS_LAT_LNG[0],
-          AARHUS_LAT_LNG[1]
-        );
-        setCityName(name);
-        if (markerRef.current) {
-          markerRef.current.openPopup();
-        }
-      } catch {
-        // ignore
-      }
-    })();
+    markerRef.current?.openPopup();
   }, []);
 
   const handleDragEnd = useCallback(async () => {
