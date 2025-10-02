@@ -38,6 +38,17 @@ export default function MapReactLeaflet() {
     []
   );
 
+  const copenhagenIcon = useMemo(
+    () =>
+      L.icon({
+        iconUrl: "https://cdn-icons-png.flaticon.com/512/12461/12461223.png",
+        iconSize: [32, 32],
+        iconAnchor: [16, 30],
+        popupAnchor: [0, -28],
+      }),
+    []
+  );
+
   useEffect(() => {
     if (clickPos && clickMarkerRef.current) {
       clickMarkerRef.current.openPopup();
@@ -53,14 +64,15 @@ export default function MapReactLeaflet() {
 
       <Marker
         position={COPENHAGEN_LAT_LNG}
+        icon={copenhagenIcon}
         eventHandlers={{ add: (e) => e.target.openPopup() }}
       >
-        <Popup>Hello from Copenhagen!</Popup>
+        <Popup>Hello from Copenhagen! 👋</Popup>
       </Marker>
 
       {clickPos && (
         <Marker position={clickPos} icon={handIcon} ref={clickMarkerRef}>
-          <Popup>You clicked here!</Popup>
+          <Popup>📍 You clicked here!</Popup>
         </Marker>
       )}
 
